@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf8"/>
+        <link rel="stylesheet" href="main.css"/>
+        <title>WTE</title>
+    </head>
+
+    <body>
+
+        <h1>WTE</h1>
+        <button id ="start_button">Start</button>
+        <button id ="add_restaurant">Add Restaurant</button>
+        
+        <button id = "Upload_Restaurant_button">Upload Restaurant</button>
+
+
+        <div id="choose_view" style="display: none">
+
+            <h1 id="title"></h1>
+            <img id="photo"/>
+            <button id="yes_button">Yes!</button>
+            <button id="no_button">No!</button>
+            
+        </div>
+
+
+
+        <form id="new_restaurant" style = "display: none">
+
+            <h1>Add a new restaurant</h1>
+
+            Restaurant Name:<br>
+            <input type="text" name="Restaurant_name" style="width: 300px;" ><br>
+            <br>
+
+            Restaurant Category:<br>
+            <input type="text" name="Restaurant_category" style="width: 300px;" ><br>
+            <br>
+
+            Restaurant foods:<br>
+            <input type="text" name="Restaurant_category" style="width: 300px;" ><br>
+            <input type="text" name="Restaurant_category" style="width: 300px;" ><br>
+            <input type="text" name="Restaurant_category" style="width: 300px;" ><br>
+
+            <br>
+            <button id ="submit_restaurant_button">Done</button>
+
+
+        </form>
+
+        <script src="sugar.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

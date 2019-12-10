@@ -1,0 +1,63 @@
+html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#choose_view {
+    display: grid;
+    grid-template: 
+        "title title" minmax(auto, 40px)
+        "photo photo " 1fr 
+        "no    yes"   minmax(auto, 40px);
+    
+    justify-items: stretch;
+    max-width: 400px;
+    min-height: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: #eee;
+
+    padding-bottom: 20px;
+    padding-top: 20px;
+    box-sizing: border-box;
+
+}
+
+#new_restaurant {
+    
+    grid-template:
+    "ADD SOMETHING HEREEEEEEEEEE"
+
+}
+
+
+#title {
+    grid-area: title;
+    margin: 0;
+}
+
+
+#photo {
+    grid-area: photo;
+    width: 100%;
+}
+
+#no_button { grid-area: no }
+#yes_button { grid-area: yes}
+
+
+
+
+
+
+
