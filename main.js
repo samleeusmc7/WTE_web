@@ -320,6 +320,32 @@ let Upload_Restaurant_button = document.querySelector("#Upload_Restaurant_button
 
 
 
+new_restaurant_form.addEventListener("submit", function(event)
+{
+    event.preventDefault()
+    let name_field = new_restaurant_form.querySelector("[name='restaurant_name']")
+
+    let new_restaurant =
+    {
+        name: name_field.value,
+        foods: ["orange_chicken", "general_tso_chicken"],
+        picture: "chinese_restaurant.jpeg"
+    }
+
+    restaurants.push(new_restaurant)
+
+
+    start_button.style.display = ""
+    add_restaurant.style.display = ""
+    Upload_Restaurant_button.display = ""
+    new_restaurant_form.style.display = "none"
+
+
+})
+
+
+
+
 start_button.addEventListener("click", function()
 {
     start_button.style.display = "none"
