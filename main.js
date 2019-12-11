@@ -216,9 +216,34 @@ let foods = [
 let restaurants = [
     {
         name: "American Classic's",
-        foods: ["burger, hotdog"],
+        foods: ["burger", "hotdog"],
         picture: "american_restaurant.jpeg"
     },
+
+
+
+
+
+    {
+        name: "The Dragon's Alive",
+        foods: ["orange_chicken", "general_tso_chicken"],
+        picture: "chinese_restaurant.jpeg"
+    },
+
+
+
+
+
+
+    {
+        name: "The Dragon's Dead",
+        foods: ["orange_chicken", "general_tso_chicken"],
+        picture: "chinese_restaurant.jpeg"
+    },
+
+
+
+
 
     {
         name: "The Dragon's Egg",
@@ -270,9 +295,9 @@ let restaurants = [
 ]
 
 
-let foods_in_category = []
+let foods_in_selected_category = []
 
-let restaurants_in_foods = []
+let restaurants_with_selected_food = []
 
 
 let choose_view = document.querySelector("#choose_view")
@@ -319,7 +344,7 @@ let index = 0;
 
 let selected_category = null;
 
-let selected_foods = null;
+let selected_food = null;
 
 let selection_stage = "category";
 
@@ -342,24 +367,24 @@ no_button.addEventListener("click", function()
     {
         index = index + 1;
         
-        if(index === foods_in_category.length)
+        if(index === foods_in_selected_category.length)
         {
             index = 0;
         }
-        title.innerText = foods_in_category[index].name
-        photo.src = "foods/" + foods_in_category[index].picture
+        title.innerText = foods_in_selected_category[index].name
+        photo.src = "foods/" + foods_in_selected_category[index].picture
     }
 
     if(selection_stage === "restaurant")
     {
         index = index + 1;
         
-        if(index === restaurants_in_foods.length)
+        if(index === restaurants_with_selected_food.length)
         {
             index = 0;
         }
-        title.innerText = restaurants_in_foods[index].name
-        photo.src = "foods/" + restaurants_in_foods[index].picture
+        title.innerText = restaurants_with_selected_food[index].name
+        photo.src = "foods/" + restaurants_with_selected_food[index].picture
     }
 
 })
@@ -379,12 +404,12 @@ yes_button.addEventListener("click", function()
 
         selected_category = categories[index]
 
-        foods_in_category = foods.filter((food) => {return food.category === selected_category.id});
+        foods_in_selected_category = foods.filter((food) => {return food.category === selected_category.id});
 
         index = 0;
 
-        title.innerText = foods_in_category[index].name
-        photo.src = "foods/" + foods_in_category[index].picture
+        title.innerText = foods_in_selected_category[index].name
+        photo.src = "foods/" + foods_in_selected_category[index].picture
     }
 
 
@@ -393,19 +418,18 @@ yes_button.addEventListener("click", function()
 
         selection_stage = "restaurant";
 
-        selected_foods = foods[index]
+        selected_food = foods_in_selected_category[index]
 
-        restaurants_in_foods = restaurants.filter((restaurant) => {return restaurant.category === selected_foods.id});
+        restaurants_with_selected_food = restaurants.filter((restaurant) => {return restaurant.foods.includes(selected_food.id)});
 
-        //index = index + 1;
-        //index = 0;
+        index = 0;
 
-        /*if(index === restaurants.length)
+        if(index === restaurants.length)
         {
             index = 0;
-        }*/
-        title.innerText = restaurants[index].name
-        photo.src = "foods/" + restaurants[index].picture
+        }
+        title.innerText = restaurants_with_selected_food[index].name
+        photo.src = "foods/" + restaurants_with_selected_food[index].picture
     }
 
 
@@ -427,12 +451,12 @@ yes_button.addEventListener("click", function()
         //index = index + 1;
         //index = 0;
 
-        /*if(index === restaurants_in_foods.length)
+        /*if(index === restaurants_with_selected_food.length)
         {
             index = 0;
         }*/
-        title.innerText = restaurants_in_foods[index].name
-        photo.src = "foods/" + restaurants_in_foods[index].picture
+        title.innerText = restaurants_with_selected_food[index].name
+        photo.src = "foods/" + restaurants_with_selected_food[index].picture
     }
 
 //ERROR ERROR ERROR
